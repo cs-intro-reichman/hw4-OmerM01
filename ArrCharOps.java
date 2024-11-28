@@ -82,16 +82,16 @@ public class ArrCharOps {
      *  If no such character is found, returns -1.
      */
     public static int lastIndexOf(char[] arr, char ch) {
-        int count = 0;
+        int pointer = 0;
         for(int i = 0; i < arr.length; i++){
             if(arr[i] == ch){
-                count++;
+                pointer = i;
             }
         }
-        if(count == 0){
+        if(pointer == 0){
             return -1;
         }
-        return arr[count];
+        return pointer;
     }
 
     /* Returns an array which is the concatanation of the two given arrays.
@@ -105,7 +105,7 @@ public class ArrCharOps {
         int lastIndex = arr1.length;
 
         for(int i = 0; i < arr2.length; i++){
-            newArr[lastIndex + i] = arr1[i];
+            newArr[lastIndex + i] = arr2[i];
         }
         return newArr;
     }
@@ -206,9 +206,6 @@ public class ArrCharOps {
                 }
             }
         }
-
-       else{
         return -2;
        }
     }
-}
