@@ -192,6 +192,8 @@ public class ArrCharOps {
                     return -1;
                 }
             }
+        }else if(str1.length() < str2.length()){
+            return 1;
         }
 
         if(str1.length() == str2.length() && str1 != str2){
@@ -205,7 +207,6 @@ public class ArrCharOps {
             }
         }
 
-        
        else{
         return -2;
        }
