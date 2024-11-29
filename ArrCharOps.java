@@ -183,6 +183,8 @@ public class ArrCharOps {
                 for(int i = 0; i < str1.length(); i++){
                     if(str1.charAt(i) < str2.charAt(i)){
                         return -1;
+                    }else if(str1.charAt(i) > str2.charAt(i)){
+                        return 1;
                     }
                 }
             }
@@ -195,6 +197,8 @@ public class ArrCharOps {
                 for(int i = 0; i < str2.length(); i++){
                     if(str2.charAt(i) < str1.charAt(i)){
                         return 1;
+                    }else if(str2.charAt(i) > str1.charAt(i)){
+                        return -1;
                     }
                 }
             }
