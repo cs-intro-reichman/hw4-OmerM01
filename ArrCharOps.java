@@ -144,6 +144,7 @@ public class ArrCharOps {
         }
         return hashcode;
     }
+    
 
     /**
      * Compares the two strings lexicographically.
@@ -170,25 +171,38 @@ public class ArrCharOps {
      *         lexicographically greater than str2.
      *         return -2 if there is an error with the input.
      */
-    public static int compareTo(String str1, String str2) {
+    public static int compareTo(String str1, String str2){
         str1 = str1.toLowerCase();
         str2 = str2.toLowerCase();
-        boolean isLexi = true;
-        if(str1 == str2) return 0; // what about capitals?
-        if(str1.length() < str2.length()){
-            for(int i = 0; i < str1.length(); i++){
-                if(str1.charAt(i) != str2.charAt(i)){
-                    isLexi = false;
+        if(str1 == str2) return 0; // if they are equal. example: "hello" and "hello".
+        
+        if(str1.length() < str2.length()){//if str1 is shoter and is a substring of str2. example: "abc" and "abcd".
+            if(str1 == str2.substring(0, str1.length() - 1)){
+                return -1;
+            } else{
+                for(int i = 0; i < str1.length(); i++){
+                    if(str1.charAt(i) < str2.charAt(i)){
+                        return -1;
+                    }
                 }
             }
         }
-        if(isLexi){
-            return -1;
-        }
+ 
+        if(str1.length() > str2.length()){//if str1 is bigger and str2 is a substring. example: "abcd" and "abc".
+            if(str2 == str1.substring(0, str2.length() - 1)){
+                return 1;
+            } else{
+                for(int i = 0; i < str2.length(); i++){
+                    if(str2.charAt(i) < str1.charAt(i)){
+                        return 1;
+                    }
+                }
+            }
+        }    
 
-        if(str1.length() < str2.length()){
+        if(str1.length() == str2.length() && str1 != str2){ // if they have the same length but not equal. example: "date" and "dark".
             for(int i = 0; i < str1.length(); i++){
-                if(str1.charAt(i) < str2.charAt(i)){
+                if (str1.charAt(i) < str2.charAt(i)){
                     return -1;
                 }
                 else if(str1.charAt(i) > str2.charAt(i)){
@@ -196,21 +210,6 @@ public class ArrCharOps {
                 }
             }
         }
-        
-        if(str1.length() > str2.length()){
-            return 1;
-        }
-
-        if(str1.length() == str2.length() && str1 != str2){
-            for(int i = 0; i < str1.length(); i++){
-                if(str1.charAt(i) > str2.charAt(i)){
-                    return 1;
-                }
-                else if(str1.charAt(i) < str2.charAt(i)){
-                    return -1;
-                }
-            }
-        }
         return -2;
-       }
     }
+}
