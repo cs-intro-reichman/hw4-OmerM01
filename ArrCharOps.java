@@ -214,6 +214,6 @@ public class ArrCharOps {
                 }
             }
         }
-        return 0;
+        return -2;
     }
 }
