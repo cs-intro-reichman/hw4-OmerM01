@@ -22,6 +22,7 @@ public class ArrCharOps {
         System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
+        System.out.println("hello");
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -172,6 +173,9 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2){
+        if(str1 == null || str2 == null){
+            return -2;
+        }
         str1 = str1.toLowerCase();
         str2 = str2.toLowerCase();
         if(str1.equals(str2)) return 0; // if they are equal. example: "hello" and "hello".
