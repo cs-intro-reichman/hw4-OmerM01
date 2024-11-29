@@ -208,7 +208,7 @@ public class ArrCharOps {
             }
         }    
 
-        if(str1.length() == str2.length() && str1 != str2){ // if they have the same length but not equal. example: "date" and "dark".
+        if(str1.length() == str2.length()){ // if they have the same length but not equal. example: "date" and "dark".
             for(int i = 0; i < str1.length(); i++){
                 if (str1.charAt(i) < str2.charAt(i)){
                     return -1;
