@@ -174,10 +174,10 @@ public class ArrCharOps {
     public static int compareTo(String str1, String str2){
         str1 = str1.toLowerCase();
         str2 = str2.toLowerCase();
-        if(str1 == str2) return 0; // if they are equal. example: "hello" and "hello".
+        if(str1.equals(str2)) return 0; // if they are equal. example: "hello" and "hello".
         
         if(str1.length() < str2.length()){//if str1 is shoter and is a substring of str2. example: "abc" and "abcd".
-            if(str1 == str2.substring(0, str1.length() - 1)){
+            if(str1.equals(str2.substring(0, str1.length()))){
                 return -1;
             } else{
                 for(int i = 0; i < str1.length(); i++){
@@ -189,7 +189,7 @@ public class ArrCharOps {
         }
  
         if(str1.length() > str2.length()){//if str1 is bigger and str2 is a substring. example: "abcd" and "abc".
-            if(str2 == str1.substring(0, str2.length() - 1)){
+            if(str2.equals(str1.substring(0, str2.length()))){
                 return 1;
             } else{
                 for(int i = 0; i < str2.length(); i++){
