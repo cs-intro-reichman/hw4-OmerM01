@@ -176,48 +176,44 @@ public class ArrCharOps {
         if(str1 == null || str2 == null){
             return -2;
         }
+
         str1 = str1.toLowerCase();
         str2 = str2.toLowerCase();
-        if(str1.equals(str2)) return 0; // if they are equal. example: "hello" and "hello".
+        if(str1.equals(str2)){  // if they are equal. example: "hello" and "hello"
+            return 0;
+        }
         
-        if(str1.length() < str2.length()){//if str1 is shoter and is a substring of str2. example: "abc" and "abcd".
-            if(str1.equals(str2.substring(0, str1.length()))){
-                return -1;
-            } else{
+        if(str1.length() < str2.length()){ //if str1 is shoter and is a substring of str2. example: "abc" and "abcd".
                 for(int i = 0; i < str1.length(); i++){
                     if(str1.charAt(i) < str2.charAt(i)){
                         return -1;
-                    }else if(str1.charAt(i) > str2.charAt(i)){
+                    } else if(str1.charAt(i) > str2.charAt(i)){
                         return 1;
                     }
                 }
-            }
+                return -1;
         }
  
         if(str1.length() > str2.length()){//if str1 is bigger and str2 is a substring. example: "abcd" and "abc".
-            if(str2.equals(str1.substring(0, str2.length()))){
-                return 1;
-            } else{
                 for(int i = 0; i < str2.length(); i++){
                     if(str2.charAt(i) < str1.charAt(i)){
                         return 1;
-                    }else if(str2.charAt(i) > str1.charAt(i)){
+                    } else if(str2.charAt(i) > str1.charAt(i)){
                         return -1;
                     }
                 }
-            }
-        }    
+                return 1;
+        }
 
         if(str1.length() == str2.length()){ // if they have the same length but not equal. example: "date" and "dark".
             for(int i = 0; i < str1.length(); i++){
                 if (str1.charAt(i) < str2.charAt(i)){
                     return -1;
-                }
-                else if(str1.charAt(i) > str2.charAt(i)){
+                } else if(str1.charAt(i) > str2.charAt(i)){
                     return 1;
                 }
             }
         }
-        return -2;
+        return 0;
     }
 }
