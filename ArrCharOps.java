@@ -193,18 +193,22 @@ public class ArrCharOps {
 
         int minLength = Math.min(str1.length(), str2.length());
         for(int i = 0; i < minLength; i++){
-            if(str1.charAt(i) < str2.charAt(i)){
+            char ch1 = str1.charAt(i);
+            char ch2 = str2.charAt(i);
+
+            if(ch1 < ch2){
                 return -1;
-            } else if(str1.charAt(i) > str2.charAt(i)){
+            } else if(ch1 > ch2){
                 return 1;
             }
         }
 
         if(str1.length() < str2.length()){
             return -1;
-        } else{
+        } else if(str1.length() > str2.length()){
             return 1;
         }
+        return 0;
 
         
         // if(str1.length() < str2.length()){ //if str1 is shoter and is a substring of str2. example: "abc" and "abcd".
