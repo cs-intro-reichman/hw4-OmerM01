@@ -177,14 +177,14 @@ public class ArrCharOps {
             return -2;
         }
 
-        // str1 = str1.toLowerCase();
-        // str2 = str2.toLowerCase();
-
-        if (str1.length() == 0 || str2.length() == 0) {
-            if (str1.length() == 0 && str2.length() == 0) {
-                return 0; //both empty
-            }
-            return str1.length() == 0 ? -1 : 1; //empty string is smaller
+        if (str1.length() == 0 && str2.length() == 0) {
+            return 0; // both are empty
+        }
+        if (str1.length() == 0) {
+            return -1; 
+        }
+        if (str2.length() == 0) {
+            return 1; 
         }
 
         if(str1.equals(str2)){  // if they are equal. example: "hello" and "hello"
@@ -195,20 +195,11 @@ public class ArrCharOps {
         for(int i = 0; i < minLength; i++){
             char ch1 = str1.charAt(i);
             char ch2 = str2.charAt(i);
-
-            if(ch1 < ch2){
-                return -1;
-            } else if(ch1 > ch2){
-                return 1;
+            if(ch1 != ch2){
+                return ch1 < ch2 ? -1 : 1;
             }
         }
-
-        if(str1.length() < str2.length()){
-            return -1;
-        } else if(str1.length() > str2.length()){
-            return 1;
-        }
-
+        return str1.length() < str2.length() ? -1 : 1;
         
         // if(str1.length() < str2.length()){ //if str1 is shoter and is a substring of str2. example: "abc" and "abcd".
         //         for(int i = 0; i < str1.length(); i++){
