@@ -208,7 +208,6 @@ public class ArrCharOps {
         } else if(str1.length() > str2.length()){
             return 1;
         }
-        return 0;
 
         
         // if(str1.length() < str2.length()){ //if str1 is shoter and is a substring of str2. example: "abc" and "abcd".
