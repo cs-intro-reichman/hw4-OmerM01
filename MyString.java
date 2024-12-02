@@ -18,6 +18,7 @@ public class MyString {
 
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
+        if(str == null) return null;
         String lowerStr = " ";
         for(int i = 0; i < str.length(); i++){
             if(str.charAt(i) > 'A' && str.charAt(i) < 'Z'){
