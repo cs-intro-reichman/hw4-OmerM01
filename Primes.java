@@ -22,7 +22,7 @@ public class Primes {
         for(int i = 2; i < isPrime.length; i++){ //counting all prime nums
             if(isPrime[i] == true){
                 primesCount++;
-                System.out.print(i + "\n");
+                System.out.println(i);
             }
         }
         int precentage = (primesCount * 100) / n;
