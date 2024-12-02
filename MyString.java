@@ -18,14 +18,14 @@ public class MyString {
 
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
-        if(str == null) return null;
+        if(str == null) return "";
         String lowerStr = " ";
         for(int i = 0; i < str.length(); i++){
-            if(str.charAt(i) > 'A' && str.charAt(i) < 'Z'){
-                lowerStr += (char) (str.charAt(i) + 32);
+            if(str.charAt(i) >= 'A' && str.charAt(i) <= 'Z'){
+                lowerStr = lowerStr  + (char) (str.charAt(i) + 32);
             }
             else{
-                lowerStr += str.charAt(i);
+                lowerStr = lowerStr + str.charAt(i);
             }
         }
         
